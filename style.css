@@ -565,15 +565,193 @@ footer p {
     display: none;
 }
 
-/* Adaptation automatique pour petits écrans/tablettes */
-@media (max-width: 900px) {
+/* ==========================================================================
+   RESPONSIVE & MOBILE DESIGN (Toutes les pages & sections)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TABLETTES ET PETITS ÉCRANS (< 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+
+    /* Page Accueil - Figures */
     .figures-grid {
-        grid-template-columns: repeat(2, 1fr); /* Passera à 2 par 2 sur tablette */
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem;
+    }
+
+    /* Page Équipe - Work Packages (Passe de 6 colonnes à 3 colonnes x 4 lignes) */
+    .grid-wp {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1rem;
+    }
+
+    /* Le WP-11 reprend une position fluide normale au sein de la grille */
+    .grid-wp .wp-11 {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: 100% !important;
+    }
+
+    /* Partenaires (3 à 4 par ligne) */
+    .grid-partners {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
 }
 
+
+/* --------------------------------------------------------------------------
+   2. PETITES TABLETTES ET GRANDS PHABLETTES (< 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Navigation / En-tête */
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    /* Coordinateurs & Work Packages (2 colonnes) */
+    .grid-2,
+    .grid-wp {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.8rem;
+    }
+
+    /* Associations de Patients (1 par ligne) */
+    .grid-associations {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Conseil Scientifique (SAB) */
+    .sab-list {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* --------------------------------------------------------------------------
+   3. MOBILES ET ÉCRANS ÉTROITS (< 550px)
+   -------------------------------------------------------------------------- */
 @media (max-width: 550px) {
-    .figures-grid {
-        grid-template-columns: 1fr; /* 1 par ligne sur mobile */
+
+    /* Passage de toutes les grilles principales à 1 seule colonne */
+    .figures-grid,
+    .grid-2,
+    .grid-wp {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    /* Ajustement des cartes pour les écrans tactiles */
+    .card-person {
+        padding: 1rem;
+    }
+
+    .grid-wp .photo-placeholder,
+    .grid-2 .photo-placeholder {
+        width: 80px;
+        height: 80px;
+    }
+
+    .grid-wp .person-name,
+    .grid-2 .person-name {
+        font-size: 1rem;
+    }
+
+    .grid-wp .person-role,
+    .grid-2 .person-role {
+        font-size: 0.85rem;
+    }
+
+    /* Partenaires (2 par ligne sur mobile) */
+    .grid-partners {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    /* Boutons bas de page */
+    .discover-btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-discover {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+/* ==========================================================================
+   EN-TÊTE & LOGO FLUIDE
+   ========================================================================== */
+.logo-container img,
+.logo-img-text {
+    /* La largeur s'adapte à l'écran tout en gardant ses proportions */
+    max-width: clamp(140px, 20vw, 220px);
+    height: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   HERO SECTION (Titre & Sous-titre)
+   ========================================================================== */
+.hero-section, 
+#hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vh, 3.5rem) 1rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.hero-section h1,
+#hero h1 {
+    /* Police adaptative selon la largeur de l'écran (Min: 1.6rem, Fluid: 3.5vw, Max: 2.8rem) */
+    font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    word-break: break-word; /* Évite les dépassements de mots très longs */
+}
+
+.hero-section p,
+#hero p {
+    font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+    line-height: 1.5;
+    max-width: 900px;
+    margin: 0 auto 1.5rem auto;
+}
+
+/* ==========================================================================
+   ENCART RÉSUMÉ (Introduction / Présentation)
+   ========================================================================== */
+.summary-card,
+.card-summary,
+.intro-card {
+    width: 100%;
+    max-width: 1000px; /* Largeur maximale sur grands écrans */
+    margin: 0 auto 2rem auto;
+    padding: clamp(1rem, 3vw, 2.5rem);
+    box-sizing: border-box;
+    border-radius: 12px;
+    
+    /* Typographie adaptative à l'intérieur du résumé */
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    line-height: 1.6;
+}
+
+/* Ajustements Responsive spécifiques */
+@media (max-width: 768px) {
+    .summary-card,
+    .card-summary,
+    .intro-card {
+        padding: 1.2rem;
     }
 }
