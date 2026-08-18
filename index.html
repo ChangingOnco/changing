@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANGING - Réseau National sur le Glioblastome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="namelogoT.png" alt="Logo CHANGING" class="logo-img-text">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a></li>
+                <li><a href="projet.html"><span class="lang-fr">Le Réseau</span><span class="lang-en">The Network</span></a></li>
+                <li><a href="equipe.html"><span class="lang-fr">L'Équipe</span><span class="lang-en">The Team</span></a></li>
+                <li><a href="actualites.html"><span class="lang-fr">Actualités</span><span class="lang-en">News</span></a></li>
+                <li><a href="contact.html"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a></li>
+            </ul>
+            
+            <div class="header-options">
+                <div class="accessibility-dropdown">
+                    <button onclick="toggleAccessMenu()" class="access-main-btn" aria-label="Options d'accessibilité" title="Options d'accessibilité">
+                        ♿
+                    </button>
+                    <div id="accessMenu" class="access-menu-content">
+                        <button onclick="toggleHighContrast()" class="access-item">
+                            <span class="lang-fr">Contraste élevé</span><span class="lang-en">High Contrast</span>
+                        </button>
+                        <button onclick="changeFontSize(1)" class="access-item">
+                            <span>Agrandir le texte (A+)</span>
+                        </button>
+                        <button onclick="changeFontSize(-1)" class="access-item">
+                            <span>Réduire le texte (A-)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lang-switch">
+                    <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn">FR</button>
+<span>/</span>
+<button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-left">
+                <img src="logo.png" alt="CHANGING Logo" class="hero-logo-img">
+            </div>
+            <div class="hero-right">
+                <div class="hero-text-content">
+                    <h2>
+                        <span class="lang-fr">Réseau National d’Excellence pour la Recherche sur le Glioblastome</span>
+                        <span class="lang-en">French Research Network of Excellence against Glioblastoma</span>
+                    </h2>
+                    <p class="hero-desc">
+                        <span class="lang-fr">Une expertise nationale unie contre le cancer du cerveau pour transformer le pronostic du glioblastome et développer les traitements de demain en associant chercheurs, cliniciens et patients</span>
+                        <span class="lang-en">A united national expertise against brain cancer to transform glioblastoma prognosis and develop tomorrow's treatments by bringing together researchers, clinicians, and patients</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inca-banner">
+            <p class="inca-text">
+                <span class="lang-fr">CHANGING bénéficie de la labellisation et du soutien financier de l’INCa au titre des Réseaux d’Excellence de recherche contre les cancers de mauvais pronostic (Labrex)</span>
+                <span class="lang-en">CHANGING is labeled and financially supported by INCa as part of the Networks of Excellence in research against poor prognosis cancers (Labrex)</span>
+            </p>
+            <p class="inca-subtext">
+                <span class="lang-fr">INCa : Institut National du Cancer</span>
+                <span class="lang-en">INCa: French National Cancer Institute</span>
+            </p>
+        </section>
+
+        <section id="key-figures">
+            <h3>
+                <span class="lang-fr">Le programme en chiffres</span>
+                <span class="lang-en">The program in figures</span>
+            </h3>
+            
+            <!-- GRILLE MODIFIÉE : Passage à 4 colonnes avec le même style -->
+            <div class="figures-grid">
+                
+                <!-- Encart 1 (Existant - Turquoise) -->
+                <div class="figure-card" style="background: rgba(255, 255, 255, 0.3); padding: 2rem; border-radius: 10px; border: 1px solid #D6DFE7; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <span class="number" style="display: block; font-size: 3rem; font-weight: bold; color: #38C9BB; line-height: 1;">5</span>
+                    <span class="label" style="display: block; font-size: 1.1rem; color: #333; margin-top: 0.5rem;">
+                        <span class="lang-fr">Thématiques de recherche</span>
+                        <span class="lang-en">Research themes</span>
+                    </span>
+                </div>
+
+                <!-- Encart 2 (Existant - Turquoise) -->
+                <div class="figure-card" style="background: rgba(255, 255, 255, 0.3); padding: 2rem; border-radius: 10px; border: 1px solid #D6DFE7; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <span class="number" style="display: block; font-size: 3rem; font-weight: bold; color: #38C9BB; line-height: 1;">14</span>
+                    <span class="label" style="display: block; font-size: 1.1rem; color: #333; margin-top: 0.5rem;">
+                        <span class="lang-fr">Équipes Expertes</span>
+                        <span class="lang-en">Expert Teams</span>
+                    </span>
+                </div>
+
+                <!-- Encart 3 (Existant - Turquoise) -->
+                <div class="figure-card" style="background: rgba(255, 255, 255, 0.3); padding: 2rem; border-radius: 10px; border: 1px solid #D6DFE7; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <span class="number" style="display: block; font-size: 3rem; font-weight: bold; color: #38C9BB; line-height: 1;">58</span>
+                    <span class="label" style="display: block; font-size: 1.1rem; color: #333; margin-top: 0.5rem;">
+                        <span class="lang-fr">Partenaires</span>
+                        <span class="lang-en">Partners</span>
+                    </span>
+<!-- Précision en petit et italique -->
+                    <span class="sub-label" style="display: block; font-size: 1rem; color: #666; font-style: italic; margin-top: 0.3rem;">
+                        <span class="lang-fr">dont 32 services hospitaliers</span>
+                        <span class="lang-en">including 32 hospitals</span>
+		</span>
+                </div>
+
+                <!-- NOUVEL ENCART (Corrigé : Chiffre en Turquoise #38C9BB) -->
+                <div class="figure-card" style="background: rgba(255, 255, 255, 0.3); padding: 2rem; border-radius: 10px; border: 1px solid #D6DFE7; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <!-- Chiffre en Turquoise #38C9BB -->
+                    <span class="number" style="display: block; font-size: 2.8rem; font-weight: bold; color: #38C9BB; line-height: 1;">5.9 M€</span>
+                    <span class="label" style="display: block; font-size: 1.1rem; color: #333; margin-top: 0.5rem;">
+                        <span class="lang-fr">Coût du Projet</span>
+                        <span class="lang-en">Project Cost</span>
+                    </span>
+                    <!-- Précision en petit et italique -->
+                    <span class="sub-label" style="display: block; font-size: 1rem; color: #666; font-style: italic; margin-top: 0.3rem;">
+                        <span class="lang-fr">Subvention INCa : 3 M€</span>
+                        <span class="lang-en">INCa grants: 3 M€</span>
+                    </span>
+                </div>
+                
+            </div>
+            
+            <div class="discover-btn-container" style="text-align: center; margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+    <a href="projet.html" class="btn-discover">
+        <span class="lang-fr">Découvrir le Réseau</span>
+        <span class="lang-en">Discover the Network</span>
+    </a>
+    <a href="equipe.html" class="btn-discover">
+        <span class="lang-fr">Découvrir l'Équipe</span>
+        <span class="lang-en">Discover the Team</span>
+    </a>
+    
+</div>
+            
+        </section>
+
+        <section id="actus">
+            <h3>
+                <span class="lang-fr">Actualités du réseau</span>
+                <span class="lang-en">Network News</span>
+            </h3>
+            <div class="actu-card">
+                <h4>
+                    <span class="lang-fr">Lancement officiel du programme</span>
+                    <span class="lang-en">Official launch of the program</span>
+                </h4>
+                <p>
+                    <span class="lang-fr">Découvrez les ambitions et les premiers axes de collaboration du réseau national...</span>
+                    <span class="lang-en">Discover the ambitions and the first collaboration axes of the national network...</span>
+                </p>
+                <a href="actualites.html">
+                    <span class="lang-fr">Lire la suite</span>
+                    <span class="lang-en">Read more</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - CHANGING (FrenCH reseArch Network aGaINst Glioblastoma)  <a href="mentions.html" style="color: #fff; text-decoration: underline;">Mentions Légales</a>
+    </footer>
+
+    <!-- Inclusion du fichier JS externe -->
+    <script src="language.js"></script>
+</body>
+</html>

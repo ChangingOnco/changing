@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités - CHANGING - Réseau National sur le Glioblastome</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page Actualités */
+        .actus-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .actus-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .actus-section-title {
+            color: #1A365D;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #38C9BB;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .actu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .actu-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid #D6DFE7;
+            border-left: 5px solid #38C9BB;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .actu-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+
+        .actu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .actu-title {
+            font-size: 1.3rem;
+            color: #1A365D;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .actu-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        .actu-meta-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .actu-content {
+            color: #334155;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Liens externes et boutons d'action */
+        .actu-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #38C9BB;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .actu-link:hover {
+            color: #1A365D;
+            text-decoration: underline;
+        }
+
+        .actu-link .external-icon {
+            font-size: 0.85em;
+        }
+
+        .job-tag {
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #0369A1;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px dashed #CBD5E1;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            color: #64748B;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="namelogoT.png" alt="Logo CHANGING" class="logo-img-text">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#hero"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a></li>
+                <li><a href="projet.html"><span class="lang-fr">Le Réseau</span><span class="lang-en">The Network</span></a></li>
+                <li><a href="equipe.html"><span class="lang-fr">L'Équipe</span><span class="lang-en">The Team</span></a></li>
+                <li><a href="actualites.html" class="active"><span class="lang-fr">Actualités</span><span class="lang-en">News</span></a></li>
+                <li><a href="contact.html"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a></li>
+            </ul>
+            
+            <div class="header-options">
+                <div class="accessibility-dropdown">
+                    <button onclick="toggleAccessMenu()" class="access-main-btn" aria-label="Options d'accessibilité" title="Options d'accessibilité">
+                        ♿
+                    </button>
+                    <div id="accessMenu" class="access-menu-content">
+                        <button onclick="toggleHighContrast()" class="access-item">
+                            <span class="lang-fr">Contraste élevé</span><span class="lang-en">High Contrast</span>
+                        </button>
+                        <button onclick="changeFontSize(1)" class="access-item">
+                            <span>Agrandir le texte (A+)</span>
+                        </button>
+                        <button onclick="changeFontSize(-1)" class="access-item">
+                            <span>Réduire le texte (A-)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lang-switch">
+                    <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn">FR</button>
+<span>/</span>
+<button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="actus-container">
+
+        <!-- SECTION 1 : LANCEMENT ET ÉVÉNEMENTS DU RÉSEAU -->
+        <section class="actus-section">
+            <h2 class="actus-section-title">
+                📌 
+                <span class="lang-fr">Lancement officiel et Événements</span>
+                <span class="lang-en">Official Launch et Events</span>
+            </h2>
+
+            <div class="actu-grid">
+                <!-- ENCART : Kickoff Meeting -->
+                <article class="actu-card">
+                    <div class="actu-header">
+                        <h3 class="actu-title">Kickoff Meeting</h3>
+                        <div class="actu-meta">
+                            <span class="actu-meta-item">📅 A venir</span>
+                            <span class="actu-meta-item">📍 Paris, France</span>
+                        </div>
+                    </div>
+                    <div class="actu-content">
+                        <p class="lang-fr">Lancement officiel du réseau d'excellence CHANGING réunissant les équipes de recherche, cliniciens et partenaires.</p>
+                        <p class="lang-en">Official kickoff of the CHANGING network bringing together research teams, clinicians, and partners.</p>
+                    </div>
+                    <!-- Exemple de lien externe (vers un site d'inscription, programme PDF, etc.) -->
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="actu-link">
+                        <span class="lang-fr">En savoir plus </span>
+                        <span class="lang-en">Read more </span>
+                        <span class="external-icon">↗</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION 2 : CONFÉRENCES ET CONGRÈS -->
+        <section class="actus-section">
+            <h2 class="actus-section-title">
+                🎤 
+                <span class="lang-fr">Conférences et Congrès</span>
+                <span class="lang-en">Conferences et Congresses</span>
+            </h2>
+
+            <div class="actu-grid">
+                <!-- ENCART : Congrès GLIOREC -->
+                <article class="actu-card">
+                    <div class="actu-header">
+                        <h3 class="actu-title">Congrès GLIOREC</h3>
+                        <div class="actu-meta">
+                            <span class="actu-meta-item">📅 1er octobre 2026</span>
+                            <span class="actu-meta-item">📍 Boulogne</span>
+                        </div>
+                    </div>
+                    <div class="actu-content">
+                        <p class="lang-fr">Présence du réseau CHANGING au congrès GLIOREC pour présenter les axes stratégiques et les avancées de la recherche sur le glioblastome.</p>
+                        <p class="lang-en">Presence of the CHANGING network at the GLIOREC congress to present strategic axes and advances in glioblastoma research.</p>
+                    </div>
+                    <a href="https://my.weezevent.com/journee-co-construire-en-neuro-oncologie" target="_blank" rel="noopener noreferrer" class="actu-link">
+                        <span class="lang-fr">Consulter le programme GLIOREC / Inscription</span>
+                        <span class="lang-en">View GLIOREC program / Registration</span>
+                        <span class="external-icon">↗</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECTION 3 : OFFRES D'EMPLOIS -->
+        <section class="actus-section">
+            <h2 class="actus-section-title">
+                💼 
+                <span class="lang-fr">Offres d'emploi et Postdoc</span>
+                <span class="lang-en">Job Opportunities et Postdocs</span>
+            </h2>
+
+            <div class="actu-grid">
+                <!-- ENCART EXEMPLAIRE D'OFFRE D'EMPLOI -->
+                <article class="actu-card">
+                    <span class="job-tag">Thèse / Postdoc</span>
+                    <div class="actu-header">
+                        <h3 class="actu-title">Chercheur Post-doctoral en Bio-informatique (H/F)</h3>
+                        <div class="actu-meta">
+                            <span class="actu-meta-item">📅 Candidatures ouvertes</span>
+                            <span class="actu-meta-item">📍 Laboratoire partenaire (Paris)</span>
+                        </div>
+                    </div>
+                    <div class="actu-content">
+                        <p class="lang-fr">Le réseau CHANGING recrute un(e) post-doctorant(e) pour travailler sur l'analyse de données omiques appliquées au glioblastome.</p>
+                        <p class="lang-en">The CHANGING network is hiring a postdoctoral researcher to work on omics data analysis applied to glioblastoma.</p>
+                    </div>
+                    <a href="https://example.com" target="_blank" rel="noopener noreferrer" class="actu-link">
+                        <span class="lang-fr">Voir l'offre complète (PDF / Site externe)</span>
+                        <span class="lang-en">View full job description (PDF / External site)</span>
+                        <span class="external-icon">↗</span>
+                    </a>
+                </article>
+
+                <!-- Si vous n'avez pas d'offre pour le moment, vous pouvez décommenter le bloc ci-dessous : -->
+                <!--
+                <div class="empty-state">
+                    <span class="lang-fr">Aucune offre d'emploi en cours pour le moment.</span>
+                    <span class="lang-en">No job openings at the moment.</span>
+                </div>
+                -->
+            </div>
+        </section>
+
+    </main>
+
+<!-- Bouton bas de page Actualités -->
+<div class="discover-btn-container" style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">
+    <a href="contact.html" class="btn-discover">
+        <span class="lang-fr">Nous Contacter</span>
+        <span class="lang-en">Contact Us</span>
+    </a>
+</div>
+
+    <footer>
+        <p>&copy; 2026 - CHANGING (FrenCH reseArch Network aGaINst Glioblastoma) <a href="mentions.html" style="color: #fff; text-decoration: underline;">Mentions Légales</a></p>
+    </footer>
+
+    <script src="language.js"></script>
+</body>
+</html>

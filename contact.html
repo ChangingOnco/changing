@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CHANGING - Réseau National sur le Glioblastome</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page Contact */
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Logo complet centré en haut du contenu */
+        .page-logo-header {
+            text-align: center;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .page-logo-header img {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Bannières de sections (Titres stylisés) */
+        .contact-banner {
+            background: linear-gradient(135deg, #1A365D 0%, #2A4365 100%);
+            color: #ffffff;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .contact-banner h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-section {
+            margin-bottom: 3.5rem;
+        }
+
+        /* Section 1 : 2 colonnes pour les personnes référentes */
+        .grid-2-contact {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid #D6DFE7;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+        }
+
+        .contact-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1A365D;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-role {
+            font-size: 0.95rem;
+            color: #38C9BB;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #4A5568;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-details a {
+            color: #1A365D;
+            text-decoration: underline;
+        }
+
+        /* Section 2 : Contacts utiles (Associations & Réseaux) */
+        .useful-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .useful-item {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .useful-item-title {
+            font-weight: bold;
+            color: #1A365D;
+            margin-bottom: 0.5rem;
+        }
+
+        .useful-link {
+            color: #38C9BB;
+            font-weight: 600;
+            text-decoration: underline;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section 3 : Centres hospitaliers (Encart fichier PDF/externe) */
+        .file-box {
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px dashed #CBD5E1;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            color: #334155;
+            font-size: 1.1rem;
+        }
+
+        .file-link {
+            background-color: #38C9BB;
+            color: #ffffff;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            margin-left: 0.3rem;
+            display: inline-block;
+            transition: background-color 0.2s ease;
+        }
+
+        .file-link:hover {
+            background-color: #1A365D;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2-contact {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête Navigation (Bandeau du haut inchangé) -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="namelogoT.png" alt="Logo CHANGING" class="logo-img-text">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#hero"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a></li>
+                <li><a href="projet.html"><span class="lang-fr">Le Réseau</span><span class="lang-en">The Network</span></a></li>
+                <li><a href="equipe.html"><span class="lang-fr">L'Équipe</span><span class="lang-en">The Team</span></a></li>
+                <li><a href="actualites.html"><span class="lang-fr">Actualités</span><span class="lang-en">News</span></a></li>
+                <li><a href="contact.html" class="active"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a></li>
+            </ul>
+            
+            <div class="header-options">
+                <div class="accessibility-dropdown">
+                    <button onclick="toggleAccessMenu()" class="access-main-btn" aria-label="Options d'accessibilité" title="Options d'accessibilité">
+                        ♿
+                    </button>
+                    <div id="accessMenu" class="access-menu-content">
+                        <button onclick="toggleHighContrast()" class="access-item">
+                            <span class="lang-fr">Contraste élevé</span><span class="lang-en">High Contrast</span>
+                        </button>
+                        <button onclick="changeFontSize(1)" class="access-item">
+                            <span>Agrandir le texte (A+)</span>
+                        </button>
+                        <button onclick="changeFontSize(-1)" class="access-item">
+                            <span>Réduire le texte (A-)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lang-switch">
+                    <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn">FR</button>
+<span>/</span>
+<button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+
+        <!-- Logo complet centré en haut de l'écran -->
+        <div class="page-logo-header">
+            <img src="logo.png" alt="Logo CHANGING">
+        </div>
+
+        <!-- BANNIÈRE 1 : AU SUJET DU RÉSEAU -->
+        <section class="contact-section">
+            <div class="contact-banner">
+                <h2>
+                    ✉️ 
+                    <span class="lang-fr">Au sujet du Réseau</span>
+                    <span class="lang-en">About the Network</span>
+                </h2>
+            </div>
+
+            <div class="grid-2-contact">
+                <!-- Personne 1 -->
+                <div class="contact-card">
+        <div class="contact-name">Pr Ahmed IdbaiH</div>
+        <div class="contact-role">
+            <span class="lang-fr">Coordination Scientifique</span>
+            <span class="lang-en">Scientific Coordination</span>
+        </div>
+        <ul class="contact-details">
+            <li>📧 
+                <span class="lang-fr">Service de Neuro-Oncologie</span>
+                <span class="lang-en">Neuro-Oncology Department</span>
+            </li>
+            <li>Hôpital de la Pitié-Salpêtrière</li>
+            <li>47-83 bd de l'Hôpital, 75013 Paris</li>
+        </ul>
+    </div>
+
+                <!-- Personne 2 -->
+                <div class="contact-card">
+        <div class="contact-name">Magali Seassau</div>
+        <div class="contact-role">
+            <span class="lang-fr">Coordination Opérationnelle</span>
+            <span class="lang-en">Operational Coordination</span>
+        </div>
+        <ul class="contact-details">
+            <li>📧 
+                <span class="lang-fr">Service de Neuro-oncologie // Institut du Cerveau</span>
+                <span class="lang-en">Neuro-Oncology Department // Paris Brain Institute</span>
+            </li>
+            <li>Hôpital de la Pitié-Salpêtrière</li>
+            <li>47-83 bd de l'Hôpital, 75013 Paris</li>
+        </ul>
+    </div>
+</div>
+            </div>
+        </section>
+
+        <!-- BANNIÈRE 2 : CONTACTS UTILES -->
+        <section class="contact-section">
+            <div class="contact-banner">
+                <h2>
+                    🤝 
+                    <span class="lang-fr">Contacts Utiles</span>
+                    <span class="lang-en">Useful Contacts</span>
+                </h2>
+            </div>
+
+            <ul class="useful-list">
+                <li class="useful-item">
+                    <div>
+                        <div class="useful-item-title">Associations ARTC et ARTC Sud</div>
+                        <p style="margin: 0; font-size: 0.9rem; color: #64748B;">
+<span class="lang-fr">L’ARTC aide et informe les patients et leurs familles. Elle donne les moyens aux équipes soignantes de se former.</span>
+            <span class="lang-en">ARTC helps and informs patients and their families. It provides the means for care teams to receive training.</span>
+        </p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+        <div style="margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.9rem; color: #1A365D;">ARTC :</strong>
+            <a href="https://artc-asso.fr" target="_blank" rel="noopener noreferrer" class="useful-link" style="margin-top: 0;">
+                <span class="lang-fr">Visiter le site</span><span class="lang-en">Visit website</span> ↗
+            </a>
+        </div>
+        <div>
+            <strong style="font-size: 0.9rem; color: #1A365D;">ARTC Sud :</strong>
+            <a href="https://artcsud.fr/" target="_blank" rel="noopener noreferrer" class="useful-link" style="margin-top: 0;">
+                <span class="lang-fr">Visiter le site</span><span class="lang-en">Visit website</span> ↗
+            </a>
+        </div>
+    </div>
+</li>
+
+                <li class="useful-item">
+                    <div>
+                        <div class="useful-item-title">Des étoiles dans la mer et Amour Amour Amour</div>
+                        <p style="margin: 0; font-size: 0.9rem; color: #64748B;">
+<span class="lang-fr">Visent à financer la recherche médicale, soutenir les familles et sensibiliser le grand public sur le glioblastome.</span>
+            <span class="lang-en">Aim to fund medical research, support families, and raise public awareness about glioblastoma.</span>
+        </p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+        <div style="margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.9rem; color: #1A365D;">Des étoiles dans la mer :</strong>
+            <a href="https://desetoilesdanslamer-vaincreleglioblastome.fr/" target="_blank" rel="noopener noreferrer" class="useful-link" style="margin-top: 0;">
+                <span class="lang-fr">Visiter le site</span><span class="lang-en">Visit website</span> ↗
+            </a>
+        </div>
+        <div>
+            <strong style="font-size: 0.9rem; color: #1A365D;">Amour Amour Amour :</strong>
+            <a href="https://www.amouramouramour.org/" target="_blank" rel="noopener noreferrer" class="useful-link" style="margin-top: 0;">
+                <span class="lang-fr">Visiter le site</span><span class="lang-en">Visit website</span> ↗
+            </a>
+        </div>
+    </div>
+</li>
+
+                <li class="useful-item">
+                    <div>
+                        <div class="useful-item-title">INCa et SiRIC CURAMUS</div>
+                        <p style="margin: 0; font-size: 0.9rem; color: #64748B;">
+<span class="lang-fr">Information et formation des patients, du grand public et des professionnels.</span>
+            <span class="lang-en">Informing and training patients, the general public, and professionals.</span>
+        </p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+        <div style="margin-bottom: 0.5rem;">
+            <strong style="font-size: 0.9rem; color: #1A365D;">INCa :</strong>
+            <a href="https://www.cancer.fr/" target="_blank" rel="noopener noreferrer" class="useful-link" style="margin-top: 0;">
+                <span class="lang-fr">Visiter le site</span><span class="lang-en">Visit website</span> ↗
+            </a>
+        </div>
+        <div>
+            <strong style="font-size: 0.9rem; color: #1A365D;">SiRIC CURAMUS :</strong>
+            <a href="https://curamus-cancer.fr/" target="_blank" rel="noopener noreferrer" class="useful-link" style="margin-top: 0;">
+                <span class="lang-fr">Visiter le site</span><span class="lang-en">Visit website</span> ↗
+            </a>
+        </div>
+    </div>
+</li>
+        </section>
+
+        <!-- BANNIÈRE 3 : CENTRES HOSPITALIERS PARTICIPANTS -->
+        <section class="contact-section">
+            <div class="contact-banner">
+                <h2>
+                    🏥 
+                    <span class="lang-fr">Centres hospitaliers participants</span>
+                    <span class="lang-en">Participating Hospital Centers</span>
+                </h2>
+            </div>
+
+            <div class="file-box">
+                <p>
+                    <span class="lang-fr">La liste des services hospitaliers participants est disponible</span>
+                    <span class="lang-en">The complete list of all participating hospital centers is available</span>
+                    <a href="Documents/centres-hospitaliers.pdf" target="_blank" class="file-link">
+                        <span class="lang-fr">ici (PDF)</span>
+                        <span class="lang-en">here (PDF)</span>
+                    </a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - CHANGING (FrenCH reseArch Network aGaINst Glioblastoma) <a href="mentions.html" style="color: #fff; text-decoration: underline;">Mentions Légales</a></p>
+    </footer>
+
+    <script src="language.js"></script>
+</body>
+</html>

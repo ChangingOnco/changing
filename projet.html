@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANGING - Le Réseau</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- Styles spécifiques pour la page Réseau (Charte Graphique) --- */
+        
+        /* Titres des WP (Bleu Marine) */
+        .wp-block h3 {
+            color: #0F2B5B;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Sous-titres des sections (Turquoise) */
+        .wp-block h4 {
+            color: #38C9BB;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            text-transform: uppercase; /* Ajouté pour un meilleur style */
+        }
+        
+        /* Texte standard dans les encarts */
+        .wp-block p {
+            margin: 0.3rem 0;
+            color: #333;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+
+        /* --- Style des Encarts (Cartes) --- */
+        .wp-block, .wp-block-center {
+            background-color: rgba(255, 255, 255, 0.5); /* Fond blanc semi-transparent */
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #D6DFE7;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-bottom: 2rem; /* Assure un espacement vertical */
+        }
+
+        .wp-block:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.5); /* Légère opacité au survol */
+        }
+
+        /* Grille de mise en page Ligne 1 et 2 */
+        .wp-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Conteneur introduction */
+        .project-intro-container {
+            display: flex; 
+            align-items: center; 
+            gap: 2.5rem; 
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 2.5rem; 
+            border-radius: 10px; 
+            border-left: 5px solid #38C9BB;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Gestion des langues (masque l'anglais par défaut) */
+        .lang-en { display: none; }
+
+        /* Responsive (mobile) */
+        @media (max-width: 768px) {
+            .wp-layout-grid {
+                grid-template-columns: 1fr;
+            }
+            .project-intro-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .project-intro-logo {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <nav>
+            <div class="logo-container">
+    <a href="index.html">
+        <img src="namelogoT.png" alt="Logo CHANGING" class="logo-img-text">
+    </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><span class="lang-fr">Accueil</span><span class="lang-en">Home</span></a></li>
+                <li><a href="projet.html" style="color: #38C9BB;"><span class="lang-fr">Le Réseau</span><span class="lang-en">The Network</span></a></li>
+                <li><a href="equipe.html"><span class="lang-fr">L'Équipe</span><span class="lang-en">The Team</span></a></li>
+                <li><a href="actualites.html"><span class="lang-fr">Actualités</span><span class="lang-en">News</span></a></li>
+                <li><a href="contact.html"><span class="lang-fr">Contact</span><span class="lang-en">Contact</span></a></li>
+            </ul>
+            
+            <div class="header-options">
+                <div class="accessibility-dropdown">
+                    <button onclick="toggleAccessMenu()" class="access-main-btn" aria-label="Options d'accessibilité" title="Options d'accessibilité">
+                        ♿
+                    </button>
+                    <div id="accessMenu" class="access-menu-content">
+                        <button onclick="toggleHighContrast()" class="access-item">
+                            <span class="lang-fr">Contraste élevé</span><span class="lang-en">High Contrast</span>
+                        </button>
+                        <button onclick="changeFontSize(1)" class="access-item">
+                            <span>Agrandir le texte (A+)</span>
+                        </button>
+                        <button onclick="changeFontSize(-1)" class="access-item">
+                            <span>Réduire le texte (A-)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lang-switch">
+                    <button onclick="setLanguage('fr')" id="btn-fr" class="lang-btn">FR</button>
+<span>/</span>
+<button onclick="setLanguage('en')" id="btn-en" class="lang-btn">EN</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="project-details" style="max-width: 1200px; margin: 3rem auto; padding: 0 2rem;">
+            <h2 style="color: #0F2B5B; font-size: 2.2rem; text-align: center; margin-bottom: 2.5rem;">
+                <span class="lang-fr">Le réseau CHANGING</span>
+                <span class="lang-en">The CHANGING Network</span>
+            </h2>
+            
+            <!-- Introduction -->
+            <div class="project-intro-container">
+                <div class="project-intro-logo" style="flex: 0 0 250px; text-align: center;">
+                    <img src="logo.png" alt="CHANGING Logo" style="width: 100%; max-width: 230px; height: auto;">
+                </div>
+                <div class="project-intro-text" style="flex: 1;">
+                    <p style="font-size: 1.2rem !important; line-height: 1.6; color: #333; margin: 0;">
+                        <span class="lang-fr">Ce programme de recherche vise à étudier les mécanismes par lesquels la tumeur manipule le système immunitaire pour se protéger. L’objectif final est de développer de nouvelles options thérapeutiques capables de briser la résistance du glioblastome.</span>
+                        <span class="lang-en">This research program aims to study the mechanisms by which the tumor manipulates the immune system to protect itself. The ultimate goal is to develop new therapeutic options capable of breaking glioblastoma resistance.</span>
+                        <br><br>
+                        <span class="lang-fr">Pour mener à bien ses objectifs de recherche et d’innovation, CHANGING est structuré en cinq lots de travail (WP) complémentaires couvrant l'ensemble de la chaîne de recherche : de la donnée biologique au patient</span>
+                        <span class="lang-en">To carry out its research and innovation objectives, CHANGING is structured into five complementary Work Packages (WPs) covering the entire research chain: from biological data to the patient.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- LIGNE 1 : WP1 et WP2 -->
+            <div class="wp-layout-grid">
+                <!-- WP1 -->
+                <div class="wp-block">
+                    <h3>
+                        <span class="lang-fr">WP1 : Base de données nationale, interopérable et multimodale</span>
+                        <span class="lang-en">WP1: National, interoperable, and multimodal database</span>
+                    </h3>
+                    <h4><span class="lang-fr">Leaders</span><span class="lang-en">Leaders</span></h4>
+                    <p>Pr Franck Bielle (Paris) et Pr Emeline Tabouret (Marseille)</p>
+                    <h4><span class="lang-fr">Objectif</span><span class="lang-en">Objective</span></h4>
+                    <p><span class="lang-fr">Standardiser les données cliniques, biologiques et d'imagerie pour créer une infrastructure nationale unifiée permettant des recherches de haute qualité sur le glioblastome</span><span class="lang-en">Standardize clinical, biological, and imaging data to create a unified national infrastructure enabling high-quality research on glioblastoma</span></p>
+                    <h4><span class="lang-fr">Équipes associées</span><span class="lang-en">Associated teams</span></h4>
+                    <p><span class="lang-fr">L’ensemble du réseau :)</span><span class="lang-en">The whole network :)</span></p>
+                    <h4><span class="lang-fr">Plateformes Techniques</span><span class="lang-en">Technical Platforms</span></h4>
+                    <p><span class="lang-fr">CRB (Paris, Marseille, Toulouse, Lyon, Clermont-Ferrand), RENOCLIP-LOC (Paris), HISTOMICS (ICM-Inserm), CENIR (ICM, Sorbonne Université, APHP, Inserm, CNRS), Plateforme P3S (Pitié-Salpêtrière), iGenSeq (ICM-Inserm), CurieCoreTech (CSCO), CLIP2 Galilée (Sorbonne Université, Marseille), SeqOIA (APHP)</span><span class="lang-en">CRB (Paris, Marseille, Toulouse, Lyon, Clermont-Ferrand), RENOCLIP-LOC (Paris), HISTOMICS (ICM-Inserm), CENIR (ICM, Sorbonne University, APHP, Inserm, CNRS), Platform P3S (Pitié-Salpêtrière), iGenSeq (ICM-Inserm), CurieCoreTech (CSCO), CLIP2 Galilée (Sorbonne University, Marseille), SeqOIA (APHP)</span></p>
+                </div>
+
+                <!-- WP2 -->
+                <div class="wp-block">
+                    <h3>
+                        <span class="lang-fr">WP2 : Biologie et valeur clinique des GAMC</span>
+                        <span class="lang-en">WP2: Biology and clinical value of GAMC</span>
+                    </h3>
+                    <h4><span class="lang-fr">Leaders</span><span class="lang-en">Leaders</span></h4>
+                    <p>Dr Hélène Castel (Rouen) et Dr Thomas Daubon (Bordeaux)</p>
+                    <h4><span class="lang-fr">Objectif</span><span class="lang-en">Objective</span></h4>
+                    <p><span class="lang-fr">Comprendre l'importance biologique et clinique des cellules myéloïdes associées au glioblastome (GAMC) en étudiant leur hétérogénéité, leur origine et leur plasticité face aux thérapies</span><span class="lang-en">Understand the biological and clinical importance of glioblastoma-associated myeloid cells (GAMC) by studying their heterogeneity, origin, and plasticity in the face of therapies</span></p>
+                    <h4><span class="lang-fr">Équipes associées</span><span class="lang-en">Associated teams</span></h4>
+                    <p><span class="lang-fr">Inserm U1245, Spectrométrie de masse et Genomic (Rouen), UMR5095 et Inserm U1312 (Bordeaux), UMR 3244, SiRIC CURAMUS, RCP INNOV, Gustave-Roussy, Neuro-oncologie et Neurochirurgie Pitié-Salpêtrière (Paris), Plateforme PRISM (Lille), U900, INSERM U1021, GlioVasc (Paris), Centre d'Immunologie de Marseille-Luminy, Hôpital militaire Percy (Clamart), UMR5089 (Toulouse), U1234 PANTHER (Rouen), Institut de Biologie Valrose iBV (Nice), GlioME (Marseille), CRCL (Lyon)</span><span class="lang-en">Inserm U1245, Mass Spectrometry and Genomic (Rouen), UMR5095 and Inserm U1312 (Bordeaux), UMR 3244, SiRIC CURAMUS, RCP INNOV, Gustave-Roussy, Neuro-oncology and Neurosurgery Pitié-Salpêtrière (Paris), Platform PRISM (Lille), U900, INSERM U1021, GlioVasc (Paris), Center for Immunology Marseille-Luminy, Military Hospital Percy (Clamart), UMR5089 (Toulouse), U1234 PANTHER (Rouen), Institute of Biology Valrose iBV (Nice), GlioME (Marseille), CRCL (Lyon)</span></p>
+                    <h4><span class="lang-fr">Plateformes Techniques</span><span class="lang-en">Technical Platforms</span></h4>
+                    <p><span class="lang-fr">ICM-QUANT, PETRA«TECH» (INP, AMU, Marseille, iBV Nice), COBRA (Rouen), Plateforme P3S (Pitié-Salpêtrière), iGenSeq (ICM-Inserm), CBiB (Bioinformatique), IRIB (Rouen), PRISM (Lille), CurieCoreTech (CSCO)</span><span class="lang-en">ICM-QUANT, PETRA«TECH» (INP, AMU, Marseille, iBV Nice), COBRA (Rouen), Platform P3S (Pitié-Salpêtrière), iGenSeq (ICM-Inserm), CBiB (Bioinformatics), IRIB (Rouen), PRISM (Lille), CurieCoreTech (CSCO)</span></p>
+                </div>
+            </div>
+
+            <!-- LIGNE 2 : WP3 et WP4 -->
+            <div class="wp-layout-grid">
+                <!-- WP3 -->
+                <div class="wp-block">
+                    <h3>
+                        <span class="lang-fr">WP3 : Prédiction de la signature des GAMC par IA et valeur pronostique</span>
+                        <span class="lang-en">WP3: Prediction of GAMC signature by AI and prognostic value</span>
+                    </h3>
+                    <h4><span class="lang-fr">Leaders</span><span class="lang-en">Leaders</span></h4>
+                    <p>Dr Delphine Poncet (Lyon) et Dr Agusti Alentorn (Paris)</p>
+                    <h4><span class="lang-fr">Objectif</span><span class="lang-en">Objective</span></h4>
+                    <p><span class="lang-fr">Évaluer la valeur pronostique des signatures de méthylation des GAMC et développer des modèles d'intelligence artificielle pour prédire ces signatures à partir de données multimodales</span><span class="lang-en">Evaluate the prognostic value of GAMC methylation signatures and develop AI models to predict these signatures from multimodal data</span></p>
+                    <h4><span class="lang-fr">Équipes associées</span><span class="lang-en">Associated teams</span></h4>
+                    <p><span class="lang-fr">Hospices Civils de Lyon, Neuro-oncologie Pitié-Salpêtrière, ICM (Paris), Centre Henri Becquerel (Rouen), U900 (Paris), Services de Neuropathologie Marseille, Toulouse, Clermont-Ferrand, Neuro-radiologie Pitié-Salpêtrière, startup Raidium</span><span class="lang-en">Hospices Civils de Lyon, Neuro-oncology Pitié-Salpêtrière, ICM (Paris), Centre Henri Becquerel (Rouen), U900 (Paris), Departments of Neuropathology Marseille, Toulouse, Clermont-Ferrand, Neuro-radiology Pitié-Salpêtrière, startup Raidium</span></p>
+                    <h4><span class="lang-fr">Plateformes Techniques</span><span class="lang-en">Technical Platforms</span></h4>
+                    <p><span class="lang-fr">Unité moléculaire (Hospices Civils de Lyon), Unité Tumeurs Génétiques (Institut Curie), CurieCoreTech (CSCO), Auragen (Lyon)</span><span class="lang-en">Molecular Unit (Hospices Civils de Lyon), Genetic Tumor Unit (Institut Curie), CurieCoreTech (CSCO), Auragen (Lyon)</span></p>
+                </div>
+
+                <!-- WP4 -->
+                <div class="wp-block">
+                    <h3>
+                        <span class="lang-fr">WP4 : Ciblage thérapeutique des GAMC</span>
+                        <span class="lang-en">WP4: Therapeutic targeting of GAMC</span>
+                    </h3>
+                    <h4><span class="lang-fr">Leaders</span><span class="lang-en">Leaders</span></h4>
+                    <p>Pr Ahmed Idbaih (Paris) et Pr Elizabeth Moyal (Toulouse)</p>
+                    <h4><span class="lang-fr">Objectif</span><span class="lang-en">Objective</span></h4>
+                    <p><span class="lang-fr">Explorer la modulation thérapeutique des GAMC (nombre, phénotype, fonctions) en utilisant des agents chimiques et physiques dans des modèles de glioblastomes petit animal et tissus patients</span><span class="lang-en">Explore the therapeutic modulation of GAMC (number, phenotype, functions) using chemical and physical agents in glioblastoma mouse models and patient tissues.</span></p>
+                    <h4><span class="lang-fr">Équipes associées</span><span class="lang-en">Associated teams</span></h4>
+                    <p><span class="lang-fr">ICM, Sorbonne Université, Hôpital Pitié-Salpêtrière, INSERM (Paris), CRCT et IUCT-ONCOPOLE (Toulouse), Inserm U1312 Bordeaux, neuro-oncologie Hôpital Saint-Louis (Paris), IRT Saint-Exupéry (Toulouse)</span><span class="lang-en">ICM, Sorbonne University, Pitié-Salpêtrière Hospital, INSERM (Paris), CRCT and IUCT-ONCOPOLE (Toulouse), Inserm U1312 Bordeaux, neuro-oncology Saint-Louis Hospital (Paris), IRT Saint-Exupéry (Toulouse)</span></p>
+                    <h4><span class="lang-fr">Plateformes Techniques</span><span class="lang-en">Technical Platforms</span></h4>
+                    <p><span class="lang-fr">HISTOMICS, ICM-QUANT (ICM-INSERM), Cimi, CELIS (INSERM), UMS28 petit animal (Sorbonne Université), ENI (Preclinical Irradiator Plateform, Toulouse), Plateforme P3S (Pitié-Salpêtrière), iGenSeq (ICM-Inserm), Data Analysis Core (ICM-INSERM)</span><span class="lang-en">HISTOMICS, ICM-QUANT (ICM-INSERM), Cimi, CELIS (INSERM), UMS28 small animal (Sorbonne University), ENI (Preclinical Irradiator Platform, Toulouse), Platform P3S (Pitié-Salpêtrière), iGenSeq (ICM-Inserm), Data Analysis Core (ICM-INSERM)</span></p>
+                </div>
+            </div> <!-- Fin de la Ligne 2 (WP3 et WP4) -->
+
+           <!-- LIGNE 3 : WP5 Centré -->
+            <div class="wp-block" style="max-width: 1000px; margin: 0 auto;">
+                <h3 style="text-align: center;">
+                    <span class="lang-fr">WP5 : Qualité de vie, Démocratie en santé et implication des patients</span>
+                    <span class="lang-en">WP5: Quality of life, health democracy, and patient involvement</span>
+                </h3>
+                
+                <div class="wp-content-wrapper" style="text-align: left;">
+                    <h4 style="color: #38C9BB; font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.3rem; font-weight: 600; text-transform: uppercase;">
+                        <span class="lang-fr">Leaders</span>
+                        <span class="lang-en">Leaders</span>
+                    </h4>
+                    <p style="margin: 0.3rem 0; color: #333; line-height: 1.5;">Pr Sandrine de Montgolfier (Marseille), Dr Julia Tinland (Marseille) et Pr Damien Ricard (Clamart)</p>
+                    
+                    <h4 style="color: #38C9BB; font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.3rem; font-weight: 600; text-transform: uppercase;">
+                        <span class="lang-fr">Objectif</span>
+                        <span class="lang-en">Objective</span>
+                    </h4>
+                    <p style="margin: 0.3rem 0; color: #333; line-height: 1.5;">
+                        <span class="lang-fr">Analyser les parcours de soins, identifier les besoins non satisfaits des patients et des aidants et co-construire des outils d'amélioration de la prise en charge</span>
+                        <span class="lang-en">Analyze care pathways, identify unmet needs of patients and caregivers, and co-construct tools to improve care management.</span>
+                    </p>
+                    
+                    <h4 style="color: #38C9BB; font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.3rem; font-weight: 600; text-transform: uppercase;">
+                        <span class="lang-fr">Équipes associées</span>
+                        <span class="lang-en">Associated teams</span>
+                    </h4>
+                    <p style="margin: 0.3rem 0; color: #333; line-height: 1.5;">
+                        <span class="lang-fr">Université Aix-Marseille, ENS Paris-Saclay Centre Borelli (UMS 9010), Hôpital militaire Percy (Clamart), SIRIC CURASMUS, Sorbonne Université, Celsa-GRIPIC, Associations de patients : ARTC, ARTC-Sud, Amour Amour Amour, Des étoiles dans la mer et partenaires régionaux : OncoPaca, Oncorif, les CPTS</span>
+                        <span class="lang-en">Aix-Marseille University, ENS Paris-Saclay Centre Borelli (UMS 9010), Military Hospital Percy (Clamart), SIRIC CURASMUS, Sorbonne University, Celsa-GRIPIC, Patient associations: ARTC, ARTC-Sud, Amour Amour Amour, Des étoiles dans la mer and regional partners: OncoPaca, Oncorif, les CPTS</span>
+                    </p>
+                    <!-- Section Plateformes Techniques supprimée ici -->
+                </div>
+   
+</div>
+</section>
+
+        <div class="discover-btn-container" style="text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
+            <a href="equipe.html" class="btn-discover">
+                <span class="lang-fr">Découvrir l'Équipe</span>
+                <span class="lang-en">Discover the Team</span>
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - CHANGING (FrenCH reseArch Network aGaINst Glioblastoma)   <a href="mentions.html" style="color: #fff; text-decoration: underline;">Mentions Légales</a>
+    </footer>
+
+    <!-- Script de langue externe -->
+   <script src="language.js"></script>
+</body>
+</html>
