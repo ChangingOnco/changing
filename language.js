@@ -60,4 +60,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedFontSize) {
         document.documentElement.style.fontSize = savedFontSize + '%';
     }
+    // 4. FERMETURE AUTO DU MENU ACCESSIBILITÉ SUR MOBILE
+    const accessMenu = document.getElementById('accessMenu');
+    if (accessMenu) {
+        const accessItems = accessMenu.querySelectorAll('.access-item');
+        accessItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Sur mobile (écran <= 992px), on cache le menu après un clic sur une option
+                if (window.innerWidth <= 992) {
+                    accessMenu.style.display = 'none';
+                    // On retire le style inline après un court instant pour laisser le hover PC intact
+                    setTimeout(() => {
+                        accessMenu.style.display = '';
+                    }, 300);
+                }
+            });
+        });
+    }
 });
