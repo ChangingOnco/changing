@@ -760,3 +760,48 @@ footer p {
         padding: 1.2rem;
     }
 }
+/* --- Ajustements pour les téléphones en mode Portrait (< 550px ou max-width standard mobile) --- */
+@media (max-width: 768px) {
+
+    /* Organisation en colonne unique pour empiler le logo et le texte */
+    #hero {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 1rem !important;
+        gap: 1.5rem !important;
+    }
+
+    #hero .hero-left {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+    }
+
+    #hero .hero-left img {
+        max-width: 150px !important; /* Réduit la taille du logo en portrait mobile */
+        margin-top: 0 !important;
+        margin: 0 auto;
+    }
+
+    #hero .hero-right {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+    }
+
+    /* Réduction de la taille du titre de la page d'accueil en portrait */
+    #hero h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+    }
+
+    /* Centrage et adaptation du premier paragraphe sur la largeur de l'écran */
+    #hero .hero-desc {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+        font-size: 0.95rem !important;
+        text-align: center !important;
+        padding: 1rem !important;
+    }
+}
